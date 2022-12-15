@@ -128,7 +128,7 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  console.log(`Welcome`);
+  console.log(`newwwwwwww gugugugu`);
 };
 init();
 // window.addEventListener(`hashchange`, controlRecipe);
