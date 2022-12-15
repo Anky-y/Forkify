@@ -19,6 +19,9 @@ class paginationView extends View {
   }
 
   _generateMarkup() {
+    const numPages = Math.ceil(
+      this._data.results.length / this._data.resultsPerPage
+    );
     const curPage = this._data.page;
     const generateBtnPrev = `     
      <button data-goto="${
@@ -29,8 +32,25 @@ class paginationView extends View {
     </svg>
     <span>Page ${curPage - 1}</span>
     </button>
-    `;
-    const generateBtnNext = `     
+    <span class="page--number">
+    <span>Page 1 of 5</span>
+    </span>
+    <button class="btn--inline pagination__btn--next hidden">
+    <div>Page 3</div>
+    <svg class="search__icon">
+      <use href="src/img/icons.svg#icon-arrow-right"></use>
+    </svg>
+  </button> `;
+    const generateBtnNext = `  
+    <button class="btn--inline pagination__btn--next hidden">
+    <div>Page 3</div>
+    <svg class="search__icon">
+      <use href="src/img/icons.svg#icon-arrow-right"></use>
+    </svg>
+  </button>
+    <span class="page--number">
+    <span>Page 1 of 5</span>
+    </span>   
      <button data-goto="${
        curPage + 1
      }" class="btn--inline pagination__btn--next">
@@ -41,17 +61,30 @@ class paginationView extends View {
     </button>
     `;
 
-    const numPages = Math.ceil(
-      this._data.results.length / this._data.resultsPerPage
-    );
-    const pageNumber = `
-      <div class="page--number">
-         <p>Page ${curPage} of ${numPages}</p>
-      </div>`;
+    const btnBoth = `
+    <button data-goto="${
+      curPage - 1
+    }" class="btn--inline pagination__btn--prev">
+   <svg class="search__icon">
+     <use href="${icons}#icon-arrow-left"></use>
+   </svg>
+   <span>Page ${curPage - 1}</span>
+   </button>
+   <span class="page--number">
+   <span>Page ${curPage} of ${numPages}</span>
+   </span>      
+   <button data-goto="${curPage + 1}" class="btn--inline pagination__btn--next">
+ <span>Page ${curPage + 1}</span>
+ <svg class="search__icon">
+   <use href="${icons}#icon-arrow-right"></use>
+ </svg>
+ </button>
+    `;
+
     console.log(numPages);
     //page 1, there are other pages
     if (curPage === 1 && numPages > 1) {
-      return generateBtnNext + pageNumber;
+      return generateBtnNext;
     }
     //page 1, no other pages
     if (curPage === 1 && numPages === 1) {
@@ -59,11 +92,11 @@ class paginationView extends View {
     }
     // last page
     if (curPage === numPages && numPages > 1) {
-      return generateBtnPrev + pageNumber;
+      return generateBtnPrev;
     }
     // other page
     if (curPage < numPages && numPages !== 1) {
-      return generateBtnPrev + generateBtnNext + pageNumber;
+      return btnBoth;
     }
   }
 }

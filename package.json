@@ -5,7 +5,7 @@
   "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --no-scope-hoist --dist-dir ./dist"
+    "build": "parcel build index.html --no-scope-hoist"
   },
   "author": "Ank",
   "license": "ISC",
@@ -16,6 +16,7 @@
   "dependencies": {
     "core-js": "^3.26.1",
     "fractional": "^1.0.0",
+    "fracty": "^1.0.11",
     "regenerator-runtime": "^0.13.11"
   }
 }

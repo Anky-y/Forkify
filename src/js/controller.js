@@ -10,9 +10,9 @@ import addRecipeView from './Views/addRecipeView.js';
 import 'core-js/stable';
 import 'regenerator-runtime';
 
-if (module.hot) {
-  module.hot.accept();
-}
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
 ///////////////////////////////////////
 

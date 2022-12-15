@@ -4,6 +4,8 @@ import icons from 'url:../../img/icons.svg'; // parcel 2
 
 import { Fraction } from 'fractional';
 
+// import fracty from 'fracty';
+
 class RecipeView extends View {
   _parentElement = document.querySelector(`.recipe`);
   _errorMessage = `We could not find that recipe :(. Please try again! `;

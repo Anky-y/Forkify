@@ -20,15 +20,21 @@
   // position: absolute;
   color: #f38e82;
   width: 10rem;
-  margin-top: 1rem;
-  margin-left: 8%;
+  border-radius: 10px;
+  outline: none;
   font-size: 1.3rem;
   font-weight: 600;
   transition: all 0.2s;
-  position: absolute;
+  transform: translate(1.5rem, 0.5rem);
+}
+
+.fill-up {
+  width: 10px;
 }
 
 .pagination {
+  display: inline-flex;
+  justify-content: space-evenly;
   margin-top: auto;
   padding: 0 3.5rem;
 
