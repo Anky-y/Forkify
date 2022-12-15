@@ -33,7 +33,7 @@ class paginationView extends View {
     <span>Page ${curPage - 1}</span>
     </button>
     <span class="page--number">
-    <span>Page 1 of 5</span>
+    <span>Page ${curPage} of ${numPages}</span>
     </span>
     <button class="btn--inline pagination__btn--next hidden">
     <div>Page 3</div>
@@ -49,7 +49,7 @@ class paginationView extends View {
     </svg>
   </button>
     <span class="page--number">
-    <span>Page 1 of 5</span>
+    <span>Page ${curPage} of ${numPages}</span>
     </span>   
      <button data-goto="${
        curPage + 1
